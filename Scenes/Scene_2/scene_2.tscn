@@ -10,6 +10,5 @@ position = Vector2(93, 213)
 scale = Vector2(0.3, 0.3)
 
 [node name="Closet" parent="." instance=ExtResource("3_5hree")]
-visible = false
 position = Vector2(29, 72)
 scale = Vector2(0.44, 1.12)
