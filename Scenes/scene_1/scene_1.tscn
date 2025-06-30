@@ -1,7 +1,6 @@
-[gd_scene load_steps=40 format=3 uid="uid://vkunea273frp"]
+[gd_scene load_steps=39 format=3 uid="uid://vkunea273frp"]
 
 [ext_resource type="Script" uid="uid://chvioedlalcwm" path="res://Code/scene_1/scene_1.gd" id="1_hfbxt"]
-[ext_resource type="Texture2D" uid="uid://c67u0fc3wd5n" path="res://assets/scene_1/1677615142_obstanovka-club-p-chernie-oboi-bez-nichego-instagram-8.png" id="2_535j8"]
 [ext_resource type="Texture2D" uid="uid://bi6p7by6rjhpc" path="res://assets/scene_1/1-2/гифка1_1_1.jpg" id="2_a7m51"]
 [ext_resource type="Texture2D" uid="uid://ccf68sc5ntrh" path="res://assets/scene_1/1-2/гифка1_1_2.jpg" id="3_535j8"]
 [ext_resource type="Texture2D" uid="uid://exuliec8w8kn" path="res://assets/scene_1/1-2/гифка1_1_3.jpg" id="4_7j17i"]
@@ -27,22 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://cid4gfbqpu74d" path="res://assets/scene_1/5/гифка3_3.jpg" id="24_1d4js"]
 [ext_resource type="Texture2D" uid="uid://b63e200hula3n" path="res://assets/scene_1/6/гифка4.jpg" id="25_3wvbj"]
 [ext_resource type="Texture2D" uid="uid://dehg5ph2bty31" path="res://assets/scene_1/7/гифка5(2).jpg" id="26_s8kdp"]
-
-[sub_resource type="Animation" id="Animation_57ubt"]
-resource_name = "0"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasModulate:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.96667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_hfbxt"]
 resource_name = "1"
@@ -71,6 +54,45 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"1"]
+}
+
+[sub_resource type="Animation" id="Animation_a7m51"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"1"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasModulate:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_535j8"]
@@ -255,43 +277,20 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_a7m51"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_57ubt"]
+resource_name = "0"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/path = NodePath("CanvasModulate:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"1"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasModulate:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_535j8"]
@@ -428,12 +427,6 @@ animations = [{
 
 [node name="Scene_1" type="Node2D"]
 script = ExtResource("1_hfbxt")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1002.5, 601.75)
-scale = Vector2(3.13298, 3.27505)
-texture = ExtResource("2_535j8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

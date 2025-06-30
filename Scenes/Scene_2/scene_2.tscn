@@ -1,20 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnp5g7f2q7k2x"]
+[gd_scene load_steps=3 format=3 uid="uid://bnp5g7f2q7k2x"]
 
-[ext_resource type="PackedScene" uid="uid://bqohevi0dyogv" path="res://player.tscn" id="2_v2hds"]
+[ext_resource type="PackedScene" uid="uid://bqohevi0dyogv" path="res://Scenes/Player/player.tscn" id="2_v2hds"]
 [ext_resource type="PackedScene" uid="uid://byagdnsu2ext2" path="res://Scenes/Scene_2/objects/closet.tscn" id="3_5hree"]
-[ext_resource type="Texture2D" uid="uid://0cm7h5cx1h7e" path="res://assets/photo_2025-06-30_15-26-46.jpg" id="3_d4se3"]
 
 [node name="Scene_2" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("2_v2hds")]
+position = Vector2(93, 213)
+scale = Vector2(0.3, 0.3)
 
 [node name="Closet" parent="." instance=ExtResource("3_5hree")]
 position = Vector2(29, 72)
 scale = Vector2(0.44, 1.12)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(827, 368)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_d4se3")
-
-[node name="player" parent="." instance=ExtResource("2_v2hds")]
-position = Vector2(848, 350)
-scale = Vector2(0.3, 0.3)
