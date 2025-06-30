@@ -14,10 +14,6 @@ config/name="please_help"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-
 [dialogic]
 
 directories/dch_directory={}
@@ -67,10 +63,6 @@ variables={}
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [input]
 
