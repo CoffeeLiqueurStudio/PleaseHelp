@@ -14,15 +14,21 @@ config/name="please_help"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"scripta": "res://Dialogs/characters/scripta.dch"
+}
 directories/dtl_directory={
 "closet_timeline": "res://Dialogs/objects/closet_timeline.dtl",
 "first_gif_timeline": "res://Dialogs/scene_1/first_gif_timeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Dialogs/styles/visual_novel_style.tres"]
+layout/style_list=["res://Dialogs/styles/visual_novel_style.tres", "res://Dialogs/styles/portrait_style.tres"]
 layout/default_style="res://Dialogs/styles/visual_novel_style.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -63,6 +69,10 @@ variables={}
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [input]
 
