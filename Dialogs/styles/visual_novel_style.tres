@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jk7u55vjo11h" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_eecag"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_nes3r"]
-[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="3_ss4it"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://Dialogs/styles/5Portraits/custom_vn_portrait_layer.tscn" id="3_eecag"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_ji16s"]
 [ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="5_u6htq"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="6_u0fip"]
@@ -18,7 +18,7 @@ overrides = {}
 
 [sub_resource type="Resource" id="Resource_wxh58"]
 script = ExtResource("1_eecag")
-scene = ExtResource("3_ss4it")
+scene = ExtResource("3_eecag")
 overrides = {}
 
 [sub_resource type="Resource" id="Resource_jfnks"]
@@ -29,7 +29,13 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_ttjh8"]
 script = ExtResource("1_eecag")
 scene = ExtResource("5_u6htq")
-overrides = {}
+overrides = {
+"box_size": "Vector2(1000, 150)",
+"normal_font": "\"res://assets/Fonts/Pangolin-Regular.ttf\"",
+"text_alignment": "1",
+"text_size": "25.0",
+"text_use_global_size": "false"
+}
 
 [sub_resource type="Resource" id="Resource_aq2qo"]
 script = ExtResource("1_eecag")
@@ -56,4 +62,4 @@ script = ExtResource("10_md0ua")
 name = "visual_novel_style"
 base_overrides = {}
 layers = Array[ExtResource("1_eecag")]([SubResource("Resource_waogg"), SubResource("Resource_wxh58"), SubResource("Resource_jfnks"), SubResource("Resource_ttjh8"), SubResource("Resource_aq2qo"), SubResource("Resource_704ff"), SubResource("Resource_0v5ls"), SubResource("Resource_oadfu")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 0

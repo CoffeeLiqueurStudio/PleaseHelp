@@ -12,8 +12,9 @@ func _ready() -> void:
 	animated_sprite_2d.visible = true
 	get_viewport().set_input_as_handled()
 	
-	
 func _on_dialogic_signal(argument:String):
+	if argument == "change_scene":
+		change_scene()
 	match argument:
 		"Gif_1":
 			animation_player.play("1")
@@ -31,3 +32,6 @@ func _on_dialogic_signal(argument:String):
 			animation_player.play("7")
 		"Gif_8":
 			animation_player.play("8")
+
+func change_scene():
+	get_tree().change_scene_to_file("res://Scenes/Scene_2/scene_2.tscn")
