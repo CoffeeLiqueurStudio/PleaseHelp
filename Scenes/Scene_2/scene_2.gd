@@ -4,6 +4,8 @@ extends Node2D
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	animation_player.play("enter")
+	await animation_player.animation_finished
+	animation_player.play("keyboard")
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if Dialogic.current_timeline != null:
 		return
@@ -11,6 +13,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	get_viewport().set_input_as_handled()
 func _on_dialogic_signal(argument:String):
 	if argument == "shoot_scripta":
+		get_tree().create_timer(3).timeout
 		animation_player.play("shoot")
 
 
