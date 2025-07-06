@@ -1,6 +1,8 @@
 @tool
 class_name DialogicResourceUtil
 
+
+\
 static var label_cache := {}
 static var event_cache: Array[DialogicEvent] = []
 
