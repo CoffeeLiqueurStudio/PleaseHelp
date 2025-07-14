@@ -2,7 +2,7 @@ extends CharacterBody2D
 @onready var label: Label = $Label
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-var speed: float = 220.0
+var speed: float = 340.0
 enum States {IDLE, RUN}
 var state: States = States.IDLE
 

@@ -1,0 +1,266 @@
+[gd_scene load_steps=25 format=3 uid="uid://bt52pq6kj2v6n"]
+
+[ext_resource type="Texture2D" uid="uid://foihg4onpjou" path="res://assets/scene_3/objects/bedroom/scripta_bedroom_floor.png" id="1_elx2v"]
+[ext_resource type="Texture2D" uid="uid://4lo212sg3cxn" path="res://assets/scene_3/objects/bedroom/bed.png" id="2_5exky"]
+[ext_resource type="PackedScene" uid="uid://bqohevi0dyogv" path="res://Scenes/player/player.tscn" id="2_sae2q"]
+[ext_resource type="Texture2D" uid="uid://dj3x3aedujauw" path="res://assets/scene_3/objects/bedroom/box1.png" id="3_uog08"]
+[ext_resource type="Texture2D" uid="uid://j82bdy35gtm4" path="res://assets/scene_3/objects/bedroom/box4.png" id="4_bb5s2"]
+[ext_resource type="Texture2D" uid="uid://cyr8qlc482vog" path="res://assets/scene_3/objects/bedroom/box3.png" id="5_mouep"]
+[ext_resource type="Texture2D" uid="uid://2joo2kspdxj8" path="res://assets/scene_3/objects/bedroom/box2.png" id="6_h4i0g"]
+[ext_resource type="Texture2D" uid="uid://dslwmh6vwanwg" path="res://assets/scene_3/objects/bedroom/carpet.png" id="7_e754e"]
+[ext_resource type="Texture2D" uid="uid://g51y0w72uqma" path="res://assets/scene_3/objects/bedroom/closet.png" id="8_pay38"]
+[ext_resource type="Texture2D" uid="uid://dgkkdtnwxg7gb" path="res://assets/scene_3/objects/bedroom/nightstand.png" id="9_rb0pa"]
+[ext_resource type="Texture2D" uid="uid://c0c62n4anu4hs" path="res://assets/scene_3/objects/bedroom/table.png" id="10_wqt77"]
+[ext_resource type="Texture2D" uid="uid://c2bvbevebbxr5" path="res://assets/scene_3/objects/bedroom/window.png" id="11_3vg2m"]
+[ext_resource type="Texture2D" uid="uid://diawvtjw6beb2" path="res://assets/scene_3/objects/bedroom/ball.png" id="12_1prjs"]
+[ext_resource type="Script" uid="uid://emau4wmpsuy" path="res://Code/scene_3/Objects/object.gd" id="12_bb5s2"]
+[ext_resource type="Texture2D" uid="uid://d1a2iahqy5ohe" path="res://assets/201503021702395972_0.jpg" id="15_bb5s2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb5s2"]
+size = Vector2(17.886, 28.5546)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mouep"]
+size = Vector2(24.4495, 83.6298)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4i0g"]
+size = Vector2(20.0813, 247.362)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e754e"]
+size = Vector2(18.6475, 31.8678)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pay38"]
+size = Vector2(157, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb0pa"]
+size = Vector2(148, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqt77"]
+size = Vector2(447, 161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vg2m"]
+size = Vector2(112.763, 442.632)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1prjs"]
+size = Vector2(20.5676, 23.0064)
+
+[node name="scene_3" type="Node2D"]
+y_sort_enabled = true
+
+[node name="BedroomContainer" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="floor_layer" type="Node2D" parent="BedroomContainer"]
+y_sort_enabled = true
+position = Vector2(284, 422)
+
+[node name="bedroom_floor" type="Sprite2D" parent="BedroomContainer/floor_layer"]
+position = Vector2(685, 95)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_elx2v")
+
+[node name="carpet" type="Sprite2D" parent="BedroomContainer/floor_layer"]
+position = Vector2(662, 179)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_e754e")
+
+[node name="furniture_layer" type="Node2D" parent="BedroomContainer"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="bed" type="Sprite2D" parent="BedroomContainer/furniture_layer"]
+y_sort_enabled = true
+position = Vector2(1451, 455)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_5exky")
+offset = Vector2(-6, -260)
+
+[node name="box1" type="Sprite2D" parent="BedroomContainer/furniture_layer"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(406, 753)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_uog08")
+offset = Vector2(8, 28)
+
+[node name="box5" type="Sprite2D" parent="BedroomContainer/furniture_layer"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(712, 266)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_uog08")
+offset = Vector2(8, 28)
+
+[node name="box4" type="Sprite2D" parent="BedroomContainer/furniture_layer"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(410, 558)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_bb5s2")
+offset = Vector2(-4, 20)
+
+[node name="box3" type="Sprite2D" parent="BedroomContainer/furniture_layer"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(516, 865)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_mouep")
+offset = Vector2(0, 34)
+
+[node name="closet" type="Sprite2D" parent="BedroomContainer/furniture_layer"]
+position = Vector2(511, 200)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_pay38")
+
+[node name="nightstand" type="Sprite2D" parent="BedroomContainer/furniture_layer"]
+position = Vector2(1223, 221)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_rb0pa")
+
+[node name="table" type="Sprite2D" parent="BedroomContainer/furniture_layer"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1224, 915)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_wqt77")
+offset = Vector2(272, -24)
+
+[node name="window" type="Sprite2D" parent="BedroomContainer/furniture_layer"]
+position = Vector2(939, 186)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_3vg2m")
+
+[node name="ball" type="Sprite2D" parent="BedroomContainer/furniture_layer"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(682, 409)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_1prjs")
+offset = Vector2(0, 64)
+
+[node name="talk_objects" type="CharacterBody2D" parent="BedroomContainer/furniture_layer"]
+collision_layer = 2
+script = ExtResource("12_bb5s2")
+
+[node name="bed" type="Area2D" parent="BedroomContainer/furniture_layer/talk_objects"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedroomContainer/furniture_layer/talk_objects/bed"]
+position = Vector2(1444, 314.5)
+scale = Vector2(14.9838, 16.3546)
+shape = SubResource("RectangleShape2D_bb5s2")
+
+[node name="bedCollisionShape2D" type="CollisionShape2D" parent="BedroomContainer/furniture_layer/talk_objects"]
+position = Vector2(1447.5, 298)
+scale = Vector2(9.93886, 4.95039)
+shape = SubResource("RectangleShape2D_mouep")
+
+[node name="closet" type="Area2D" parent="BedroomContainer/furniture_layer/talk_objects"]
+position = Vector2(517, 299)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedroomContainer/furniture_layer/talk_objects/closet"]
+position = Vector2(-5, -41.5)
+scale = Vector2(16.4332, 0.73172)
+shape = SubResource("RectangleShape2D_h4i0g")
+
+[node name="closetCollisionShape2D2" type="CollisionShape2D" parent="BedroomContainer/furniture_layer/talk_objects"]
+position = Vector2(512.87, 200)
+scale = Vector2(16.0741, 4.7697)
+shape = SubResource("RectangleShape2D_e754e")
+
+[node name="nightstand" type="Area2D" parent="BedroomContainer/furniture_layer/talk_objects"]
+position = Vector2(1240, 245)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedroomContainer/furniture_layer/talk_objects/nightstand"]
+position = Vector2(-18.5, 4.5)
+shape = SubResource("RectangleShape2D_pay38")
+
+[node name="nightstandCollisionShape2D3" type="CollisionShape2D" parent="BedroomContainer/furniture_layer/talk_objects"]
+position = Vector2(1223, 233.5)
+shape = SubResource("RectangleShape2D_rb0pa")
+
+[node name="tabel" type="Area2D" parent="BedroomContainer/furniture_layer/talk_objects"]
+position = Vector2(1, 1)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedroomContainer/furniture_layer/talk_objects/tabel"]
+position = Vector2(1356.5, 920.5)
+shape = SubResource("RectangleShape2D_wqt77")
+
+[node name="tableCollisionShape2D4" type="CollisionShape2D" parent="BedroomContainer/furniture_layer/talk_objects"]
+position = Vector2(1360.26, 946.614)
+rotation = 1.57184
+shape = SubResource("RectangleShape2D_3vg2m")
+
+[node name="objects" type="CharacterBody2D" parent="BedroomContainer/furniture_layer"]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BedroomContainer/furniture_layer/objects"]
+polygon = PackedVector2Array(482, 916, 484, 872, 524, 875, 548, 844, 550, 885, 526, 924)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="BedroomContainer/furniture_layer/objects"]
+position = Vector2(170, -402)
+polygon = PackedVector2Array(478, 871, 472, 861, 468, 846, 470, 831, 476, 818, 513, 816, 550, 824, 555, 840, 551, 860, 541, 874, 525, 883, 501, 883, 489, 880)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="BedroomContainer/furniture_layer/objects"]
+position = Vector2(-105, -116)
+polygon = PackedVector2Array(476, 887, 476, 859, 525, 875, 550, 857, 551, 887, 526, 900)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="BedroomContainer/furniture_layer/objects"]
+position = Vector2(-98, -306)
+polygon = PackedVector2Array(493, 871, 477, 856, 477, 884, 491, 907, 533, 893, 535, 857)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="BedroomContainer/furniture_layer/objects"]
+position = Vector2(186, -617)
+polygon = PackedVector2Array(517, 856, 567, 870, 540, 888, 491, 871)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BedroomContainer/furniture_layer/objects"]
+position = Vector2(940, 146)
+rotation = 1.60265
+scale = Vector2(7.06031, 12.2433)
+shape = SubResource("RectangleShape2D_1prjs")
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="BedroomContainer/furniture_layer/objects"]
+position = Vector2(438, 871)
+polygon = PackedVector2Array(-47, 3, -51, 65, 1, 113, 62, 84, 63, 30, 48, 18, 9, 30, -25, 15, -34, -3)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="BedroomContainer/furniture_layer/objects"]
+polygon = PackedVector2Array(351, 1005, 542, 1005, 542, 1012, 344, 1011, 344, 40, 1587, 40, 1587, 1011, 689, 1012, 689, 1004, 1581, 1004, 1581, 246, 350, 249)
+
+[node name="furniture_layer2" type="Node2D" parent="BedroomContainer"]
+z_index = 2
+y_sort_enabled = true
+
+[node name="box2" type="Sprite2D" parent="BedroomContainer/furniture_layer2"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(440, 975)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_h4i0g")
+offset = Vector2(10, -142)
+
+[node name="Sprite2D" type="Sprite2D" parent="BedroomContainer"]
+modulate = Color(0.494118, 0.407843, 0.45098, 1)
+z_index = -1
+position = Vector2(958.5, 539.5)
+scale = Vector2(1.915, 1.075)
+texture = ExtResource("15_bb5s2")
+
+[node name="player" parent="." instance=ExtResource("2_sae2q")]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(958, 541)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" parent="player" index="0"]
+enabled = false
+
+[node name="KitchenContainer" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="BedroomContainer/furniture_layer/talk_objects/bed" to="BedroomContainer/furniture_layer/talk_objects" method="_on_bed_body_entered"]
+[connection signal="body_entered" from="BedroomContainer/furniture_layer/talk_objects/closet" to="BedroomContainer/furniture_layer/talk_objects" method="_on_closet_body_entered"]
+[connection signal="body_entered" from="BedroomContainer/furniture_layer/talk_objects/nightstand" to="BedroomContainer/furniture_layer/talk_objects" method="_on_nightstand_body_entered"]
+[connection signal="body_entered" from="BedroomContainer/furniture_layer/talk_objects/tabel" to="BedroomContainer/furniture_layer/talk_objects" method="_on_tabel_body_entered"]
+
+[editable path="player"]
