@@ -1,5 +1,6 @@
 extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var player: CharacterBody2D = $player
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -21,4 +22,6 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_restart_pressed() -> void:
-		get_tree().change_scene_to_file("res://Scenes/scene_1/scene_1.tscn")
+	animation_player.play("end")
+	await animation_player.animation_finished
+	get_tree().change_scene_to_file("res://Scenes/scene_3/scene_3.tscn")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://bt52pq6kj2v6n"]
+[gd_scene load_steps=63 format=3 uid="uid://bt52pq6kj2v6n"]
 
+[ext_resource type="Script" uid="uid://bxsq1wvpds3er" path="res://Code/scene_3/scene_3.gd" id="1_1p44w"]
 [ext_resource type="Texture2D" uid="uid://foihg4onpjou" path="res://assets/scene_3/objects/bedroom/scripta_bedroom_floor.png" id="1_elx2v"]
 [ext_resource type="Texture2D" uid="uid://4lo212sg3cxn" path="res://assets/scene_3/objects/bedroom/bed.png" id="2_5exky"]
 [ext_resource type="PackedScene" uid="uid://bqohevi0dyogv" path="res://Scenes/player/player.tscn" id="2_sae2q"]
@@ -16,6 +17,20 @@
 [ext_resource type="Script" uid="uid://emau4wmpsuy" path="res://Code/scene_3/Objects/object.gd" id="12_bb5s2"]
 [ext_resource type="Texture2D" uid="uid://d1a2iahqy5ohe" path="res://assets/201503021702395972_0.jpg" id="15_bb5s2"]
 [ext_resource type="FontFile" uid="uid://dl46mhe2xqn4w" path="res://assets/Fonts/Pangolin-Regular.ttf" id="16_mouep"]
+[ext_resource type="Texture2D" uid="uid://duw74lfgantwb" path="res://assets/scene_3/objects/corridor/scripta_corridor.png" id="17_b34ss"]
+[ext_resource type="Texture2D" uid="uid://cr7uv72m6op4j" path="res://assets/scene_3/objects/corridor/table_corridor.png" id="18_1p44w"]
+[ext_resource type="Texture2D" uid="uid://cwppr230cqeiq" path="res://assets/scene_3/objects/corridor/plant_corridor1.png" id="19_rkm0e"]
+[ext_resource type="Texture2D" uid="uid://benyqda0xxl4m" path="res://assets/scene_3/objects/corridor/door.png" id="20_8w32h"]
+[ext_resource type="Texture2D" uid="uid://b0jm8r4yracra" path="res://assets/scene_3/objects/kitchen/kitchen_floor.png" id="21_8int8"]
+[ext_resource type="Texture2D" uid="uid://mimb11us1ybe" path="res://assets/scene_3/objects/kitchen/fridge.png" id="22_opspu"]
+[ext_resource type="Texture2D" uid="uid://dnxnhijy3foh" path="res://assets/scene_3/objects/kitchen/plant_kitchen.png" id="23_pcjp3"]
+[ext_resource type="Texture2D" uid="uid://b2oqr5syc7qnr" path="res://assets/scene_3/objects/kitchen/chair_kitchen1.png" id="24_iw3p3"]
+[ext_resource type="Texture2D" uid="uid://bgyqkv7yvb0dm" path="res://assets/scene_3/objects/kitchen/chair_kitchen2.png" id="25_1wc0u"]
+[ext_resource type="Texture2D" uid="uid://bxu8any7q26d8" path="res://assets/scene_3/objects/kitchen/countertop.png" id="26_lnerk"]
+[ext_resource type="Script" uid="uid://dhy6x8l5cfn58" path="res://Code/scene_3/Objects/kitchen_objects.gd" id="27_unyc0"]
+[ext_resource type="Texture2D" uid="uid://88ggj1bd0io3" path="res://assets/scene_3/objects/kitchen/table_kitchen.png" id="28_siweq"]
+[ext_resource type="Texture2D" uid="uid://dikvwc3jbu1ae" path="res://assets/scene_3/objects/kitchen/drawers_kitchen.png" id="29_xjkln"]
+[ext_resource type="AudioStream" uid="uid://by1pd3vliwhso" path="res://assets/sounds/sfx-wood-door-opening.mp3" id="31_rkm0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb5s2"]
 size = Vector2(17.886, 28.5546)
@@ -44,8 +59,460 @@ size = Vector2(112.763, 442.632)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1prjs"]
 size = Vector2(20.5676, 23.0064)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b34ss"]
+size = Vector2(132, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uwua"]
+size = Vector2(163, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qe4m7"]
+size = Vector2(34, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_307it"]
+size = Vector2(155, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mx0te"]
+size = Vector2(166, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vol6n"]
+size = Vector2(330, 290)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpf74"]
+size = Vector2(337, 379.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psg5k"]
+size = Vector2(194, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0syo4"]
+size = Vector2(271, 385)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jm05"]
+size = Vector2(16.5, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcy65"]
+size = Vector2(60, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vxxm"]
+size = Vector2(77, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1p44w"]
+size = Vector2(136, 158)
+
+[sub_resource type="Animation" id="Animation_b34ss"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(959, 530)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bedroom_Camera2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("kitchen_Camera2D:enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("player/Camera2D:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("AudioStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rkm0e"]
+resource_name = "bedroom_enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(611, 863)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bedroom_Camera2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player/Camera2D:enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1p44w"]
+resource_name = "bedroom_exit"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.933333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(936, 1989)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bedroom_Camera2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.733333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8w32h"]
+resource_name = "corridor_enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player/Camera2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8int8"]
+resource_name = "corridor_exit"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Camera2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.43333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasModulate:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_opspu"]
+resource_name = "kitchen_enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(3582, 903)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("kitchen_Camera2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player/Camera2D:enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_pcjp3"]
+resource_name = "kitchen_exit"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(3045, 1970)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666667, 0.866667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("kitchen_Camera2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_iw3p3"]
+resource_name = "start_scene"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(959, 530)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bedroom_Camera2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player/Camera2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasModulate:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.86667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8w32h"]
+_data = {
+&"RESET": SubResource("Animation_b34ss"),
+&"bedroom_enter": SubResource("Animation_rkm0e"),
+&"bedroom_exit": SubResource("Animation_1p44w"),
+&"corridor_enter": SubResource("Animation_8w32h"),
+&"corridor_exit": SubResource("Animation_8int8"),
+&"kitchen_enter": SubResource("Animation_opspu"),
+&"kitchen_exit": SubResource("Animation_pcjp3"),
+&"start_scene": SubResource("Animation_iw3p3")
+}
+
 [node name="scene_3" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_1p44w")
 
 [node name="BedroomContainer" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -236,7 +703,7 @@ position = Vector2(438, 871)
 polygon = PackedVector2Array(-47, 3, -51, 65, 1, 113, 62, 84, 63, 30, 48, 18, 9, 30, -25, 15, -34, -3)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="BedroomContainer/furniture_layer/objects"]
-polygon = PackedVector2Array(351, 1005, 542, 1005, 542, 1012, 344, 1011, 344, 40, 1587, 40, 1587, 1011, 689, 1012, 689, 1004, 1581, 1004, 1581, 246, 350, 249)
+polygon = PackedVector2Array(351, 1005, 623, 1005, 623, 1013, 344, 1011, 344, 40, 1587, 40, 1587, 1011, 624, 1013, 624, 1005, 1581, 1004, 1581, 246, 350, 249)
 
 [node name="furniture_layer2" type="Node2D" parent="BedroomContainer"]
 z_index = 2
@@ -251,18 +718,283 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_h4i0g")
 offset = Vector2(10, -142)
 
-[node name="player" parent="." instance=ExtResource("2_sae2q")]
+[node name="Bedroom_exitArea2D" type="Area2D" parent="BedroomContainer"]
+position = Vector2(0, 7)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedroomContainer/Bedroom_exitArea2D"]
+position = Vector2(617, 983)
+shape = SubResource("RectangleShape2D_b34ss")
+
+[node name="corridor_conatiner" type="Node2D" parent="."]
+position = Vector2(2251, 2040)
+
+[node name="Sprite2D" type="Sprite2D" parent="corridor_conatiner"]
+modulate = Color(0.25098, 0.25098, 0.25098, 1)
+position = Vector2(142, 2)
+scale = Vector2(4.818, 1.422)
+texture = ExtResource("15_bb5s2")
+
+[node name="floor_layer" type="Node2D" parent="corridor_conatiner"]
+
+[node name="floor" type="Sprite2D" parent="corridor_conatiner/floor_layer"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_b34ss")
+
+[node name="furniture_layer1" type="Node2D" parent="corridor_conatiner"]
+
+[node name="table" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(-725, -94)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_1p44w")
+
+[node name="plant1" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(-534, -98)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_rkm0e")
+
+[node name="plant2" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(1100, -110)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_rkm0e")
+
+[node name="door_bedroom" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(-18, -116)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("20_8w32h")
+
+[node name="door_toilet" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(796, -118)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("20_8w32h")
+
+[node name="door_kitchen" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(-1308, -116)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("20_8w32h")
+
+[node name="active_object" type="CharacterBody2D" parent="corridor_conatiner/furniture_layer1"]
+collision_layer = 2
+
+[node name="Door1CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/active_object"]
+position = Vector2(-1310.5, -138.5)
+shape = SubResource("RectangleShape2D_7uwua")
+
+[node name="Door2CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/active_object"]
+position = Vector2(-19, -134)
+shape = SubResource("RectangleShape2D_7uwua")
+
+[node name="Door3CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/active_object"]
+position = Vector2(794, -137)
+shape = SubResource("RectangleShape2D_7uwua")
+
+[node name="object" type="CharacterBody2D" parent="corridor_conatiner/furniture_layer1"]
+collision_layer = 2
+
+[node name="plant1" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/object"]
+position = Vector2(-538, -106.5)
+shape = SubResource("RectangleShape2D_qe4m7")
+
+[node name="plant2" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/object"]
+position = Vector2(1096, -117)
+shape = SubResource("RectangleShape2D_qe4m7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/object"]
+position = Vector2(-728.5, -73.5)
+shape = SubResource("RectangleShape2D_307it")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="corridor_conatiner/furniture_layer1/object"]
+polygon = PackedVector2Array(-1567, -84, -1221, -82, 883, -80, 1600, -86, 1598, 205, -1566, 205, -1567, -82, -1572, -82, -1572, 212, 1604, 211, 1604, -202, -1571, -201, -1572, -84)
+
+[node name="to_bedroom_DoorArea2D" type="Area2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(-1304, -142)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/to_bedroom_DoorArea2D"]
+position = Vector2(-2, 7)
+shape = SubResource("RectangleShape2D_mx0te")
+
+[node name="Door2Area2D" type="Area2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(-17, -103)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/Door2Area2D"]
+position = Vector2(-2, 8)
+shape = SubResource("RectangleShape2D_mx0te")
+
+[node name="to_kitchen_DoorArea2D" type="Area2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(796, -109)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/to_kitchen_DoorArea2D"]
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_mx0te")
+
+[node name="furniture_layer2" type="Node2D" parent="corridor_conatiner"]
+
+[node name="KitchenContainer" type="Node2D" parent="."]
+position = Vector2(2715, 22)
+
+[node name="Sprite2D" type="Sprite2D" parent="KitchenContainer"]
+self_modulate = Color(0.252028, 0.252028, 0.252028, 1)
+position = Vector2(1075, 496)
+scale = Vector2(2.19353, 1.25597)
+texture = ExtResource("15_bb5s2")
+
+[node name="floor_layer" type="Node2D" parent="KitchenContainer"]
+y_sort_enabled = true
+position = Vector2(-1, -25)
+
+[node name="floor" type="Sprite2D" parent="KitchenContainer/floor_layer"]
+y_sort_enabled = true
+position = Vector2(976, 530)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("21_8int8")
+
+[node name="furniture_layer" type="Node2D" parent="KitchenContainer"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-5, -14)
+
+[node name="fridge" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(523, 228)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("22_opspu")
+
+[node name="plant" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
 z_index = 3
 y_sort_enabled = true
-position = Vector2(958, 541)
-scale = Vector2(0.5, 0.5)
+position = Vector2(1485, 917)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("23_pcjp3")
+offset = Vector2(-136.667, -223.333)
 
-[node name="Camera2D" parent="player" index="0"]
-enabled = false
+[node name="chair1" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(692, 763)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_iw3p3")
+offset = Vector2(-124, -52)
+region_rect = Rect2(0, 0, 260, 242.5)
+
+[node name="chair2" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
+z_index = 3
+position = Vector2(466, 600)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("25_1wc0u")
+
+[node name="chair3" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
+z_index = 3
+position = Vector2(689, 969)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_iw3p3")
+offset = Vector2(-128, -154)
+
+[node name="countertop" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1199, 376)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("26_lnerk")
+
+[node name="talk_objects" type="CharacterBody2D" parent="KitchenContainer/furniture_layer"]
+collision_layer = 2
+script = ExtResource("27_unyc0")
+
+[node name="fridge" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+position = Vector2(521, 213)
+shape = SubResource("RectangleShape2D_vol6n")
+
+[node name="countertop" type="CollisionPolygon2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+z_index = 2
+position = Vector2(883, 302)
+polygon = PackedVector2Array(-82, -106, 707, -110, 706, 225, 548, 225, 546, 11, -78, 9)
+
+[node name="fridgeArea" type="Area2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+z_index = 2
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/talk_objects/fridgeArea"]
+position = Vector2(527.5, 238.25)
+shape = SubResource("RectangleShape2D_kpf74")
+
+[node name="countertopArea" type="Area2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+z_index = 2
+position = Vector2(1342, 292)
+scale = Vector2(0.8, 1)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/talk_objects/countertopArea"]
+position = Vector2(-6, -15.5)
+shape = SubResource("RectangleShape2D_psg5k")
+
+[node name="countertop2Area" type="Area2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+z_index = 2
+position = Vector2(1195, 369)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/talk_objects/countertop2Area"]
+position = Vector2(-70, -96)
+shape = SubResource("RectangleShape2D_psg5k")
+
+[node name="furniture_layer2" type="Node2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+z_index = 2
+y_sort_enabled = true
+
+[node name="table" type="Sprite2D" parent="KitchenContainer/furniture_layer/talk_objects/furniture_layer2"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(507, 803)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("28_siweq")
+
+[node name="drawers" type="Sprite2D" parent="KitchenContainer/furniture_layer/talk_objects/furniture_layer2"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1199, 245)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_xjkln")
+
+[node name="objects" type="CharacterBody2D" parent="KitchenContainer/furniture_layer"]
+collision_layer = 2
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(508.5, 821.5)
+shape = SubResource("RectangleShape2D_0syo4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(653.75, 913)
+shape = SubResource("RectangleShape2D_0jm05")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(652, 764)
+shape = SubResource("RectangleShape2D_0jm05")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(467, 635)
+shape = SubResource("RectangleShape2D_bcy65")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(1494.5, 957)
+shape = SubResource("RectangleShape2D_8vxxm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(-1, -3)
+polygon = PackedVector2Array(881, 1017, 354, 1013, 355, 42, 1598, 42, 1599, 1016, 886, 1017, 886, 1009, 1593, 1010, 1592, 49, 360, 48, 362, 1007, 881, 1009)
+
+[node name="Kitchen_exit_area" type="Area2D" parent="KitchenContainer"]
+position = Vector2(884, 997)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenContainer/Kitchen_exit_area"]
+position = Vector2(-10, -4)
+shape = SubResource("RectangleShape2D_1p44w")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -273,6 +1005,49 @@ theme_override_fonts/font = ExtResource("16_mouep")
 theme_override_font_sizes/font_size = 30
 text = "PRESS \"E\" TO INTERACT"
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.227451)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1626.0
+offset_top = 69.0
+offset_right = 2146.0
+offset_bottom = 132.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("16_mouep")
+theme_override_font_sizes/font_size = 50
+text = "PRESS \"E\" TO INTERACT"
+
+[node name="player" parent="." instance=ExtResource("2_sae2q")]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(959, 530)
+scale = Vector2(0.4, 0.4)
+
+[node name="Camera2D" parent="player" index="0"]
+enabled = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8w32h")
+}
+autoplay = "start_scene"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="bedroom_Camera2D" type="Camera2D" parent="."]
+position = Vector2(959, 540)
+enabled = false
+
+[node name="kitchen_Camera2D" type="Camera2D" parent="."]
+position = Vector2(3670, 548)
+enabled = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_rkm0e")
+
 [connection signal="body_entered" from="BedroomContainer/furniture_layer/talk_objects/bed" to="BedroomContainer/furniture_layer/talk_objects" method="_on_bed_body_entered"]
 [connection signal="body_exited" from="BedroomContainer/furniture_layer/talk_objects/bed" to="BedroomContainer/furniture_layer/talk_objects" method="_on_bed_body_exited"]
 [connection signal="body_entered" from="BedroomContainer/furniture_layer/talk_objects/closet" to="BedroomContainer/furniture_layer/talk_objects" method="_on_closet_body_entered"]
@@ -281,5 +1056,19 @@ text = "PRESS \"E\" TO INTERACT"
 [connection signal="body_exited" from="BedroomContainer/furniture_layer/talk_objects/nightstand" to="BedroomContainer/furniture_layer/talk_objects" method="_on_nightstand_body_exited"]
 [connection signal="body_entered" from="BedroomContainer/furniture_layer/talk_objects/tabel" to="BedroomContainer/furniture_layer/talk_objects" method="_on_tabel_body_entered"]
 [connection signal="body_exited" from="BedroomContainer/furniture_layer/talk_objects/tabel" to="BedroomContainer/furniture_layer/talk_objects" method="_on_tabel_body_exited"]
+[connection signal="body_entered" from="BedroomContainer/Bedroom_exitArea2D" to="." method="_on_bedroom_exit_area_2d_body_entered"]
+[connection signal="body_exited" from="BedroomContainer/Bedroom_exitArea2D" to="." method="_on_bedroom_exit_area_2d_body_exited"]
+[connection signal="body_entered" from="corridor_conatiner/furniture_layer1/to_bedroom_DoorArea2D" to="." method="_on_to_bedroom_door_area_2d_body_entered"]
+[connection signal="body_exited" from="corridor_conatiner/furniture_layer1/to_bedroom_DoorArea2D" to="." method="_on_to_bedroom_door_area_2d_body_exited"]
+[connection signal="body_entered" from="corridor_conatiner/furniture_layer1/to_kitchen_DoorArea2D" to="." method="_on_to_kitchen_door_area_2d_body_entered"]
+[connection signal="body_exited" from="corridor_conatiner/furniture_layer1/to_kitchen_DoorArea2D" to="." method="_on_to_kitchen_door_area_2d_body_exited"]
+[connection signal="body_entered" from="KitchenContainer/furniture_layer/talk_objects/fridgeArea" to="KitchenContainer/furniture_layer/talk_objects" method="_on_fridge_area_body_entered"]
+[connection signal="body_exited" from="KitchenContainer/furniture_layer/talk_objects/fridgeArea" to="KitchenContainer/furniture_layer/talk_objects" method="_on_fridge_area_body_exited"]
+[connection signal="body_entered" from="KitchenContainer/furniture_layer/talk_objects/countertopArea" to="KitchenContainer/furniture_layer/talk_objects" method="_on_countertop_area_body_entered"]
+[connection signal="body_exited" from="KitchenContainer/furniture_layer/talk_objects/countertopArea" to="KitchenContainer/furniture_layer/talk_objects" method="_on_countertop_area_body_exited"]
+[connection signal="body_entered" from="KitchenContainer/furniture_layer/talk_objects/countertop2Area" to="KitchenContainer/furniture_layer/talk_objects" method="_on_countertop_area_2_body_entered"]
+[connection signal="body_exited" from="KitchenContainer/furniture_layer/talk_objects/countertop2Area" to="KitchenContainer/furniture_layer/talk_objects" method="_on_countertop_2_area_body_exited"]
+[connection signal="body_entered" from="KitchenContainer/Kitchen_exit_area" to="." method="_on_kitchen_exit_area_body_entered"]
+[connection signal="body_exited" from="KitchenContainer/Kitchen_exit_area" to="." method="_on_kitchen_exit_area_body_exited"]
 
 [editable path="player"]

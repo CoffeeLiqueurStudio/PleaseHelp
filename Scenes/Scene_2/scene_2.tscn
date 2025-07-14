@@ -133,19 +133,6 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_cgxhc"]
 resource_name = "end"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasModulate:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_ikpt6"]
 resource_name = "enter"
@@ -218,7 +205,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_kuq08"]
 resource_name = "shoot"
-length = 5.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -250,7 +237,7 @@ tracks/2/path = NodePath("CanvasLayer:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3.01),
+"times": PackedFloat32Array(2.9),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -301,8 +288,8 @@ autoplay = true
 loop = true
 
 [node name="room" type="Sprite2D" parent="."]
-position = Vector2(1002, 471)
-scale = Vector2(0.5, 0.5)
+position = Vector2(1002, 381)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_uj53q")
 
 [node name="keyboard_label" type="Label" parent="."]
@@ -318,7 +305,7 @@ to move"
 
 [node name="player" parent="." instance=ExtResource("2_v2hds")]
 position = Vector2(1004, 306)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" parent="player" index="0"]
 enabled = false
@@ -377,11 +364,18 @@ scale = Vector2(2.68925, -0.527675)
 shape = SubResource("CircleShape2D_ikpt6")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
+position = Vector2(-11, -140)
 collision_layer = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(663, 722, 952, 720, 954, 1080, 546, 775, 535, 169, 1444, 169, 1451, 777, 1045, 1081, 1043, 721, 1342, 720, 1343, 274, 661, 274)
+polygon = PackedVector2Array(539, 868, 944, 870, 944, 1080, 534, 875, 534, 166, 1492, 166, 1494, 873, 1073, 1082, 1072, 870, 1487, 870, 1488, 272, 539, 268)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-18, 872)
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(951, 68, 946, 139, 1085, 138, 1080, 71, 1111, 73, 1105, 176, 932, 176, 936, 65)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

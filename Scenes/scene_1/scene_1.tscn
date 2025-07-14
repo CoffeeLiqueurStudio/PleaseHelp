@@ -444,4 +444,3 @@ sprite_frames = SubResource("SpriteFrames_auwci")
 animation = &"1"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
