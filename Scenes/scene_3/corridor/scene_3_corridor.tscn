@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0ns4htoi53i5"]
+
+[ext_resource type="Texture2D" uid="uid://duw74lfgantwb" path="res://assets/scene_3/objects/corridor/scripta_corridor.png" id="1_pnhsf"]
+[ext_resource type="Texture2D" uid="uid://cwppr230cqeiq" path="res://assets/scene_3/objects/corridor/plant_corridor1.png" id="2_4bo3t"]
+[ext_resource type="Texture2D" uid="uid://cr7uv72m6op4j" path="res://assets/scene_3/objects/corridor/table_corridor.png" id="2_fl5bv"]
+[ext_resource type="Texture2D" uid="uid://benyqda0xxl4m" path="res://assets/scene_3/objects/corridor/door.png" id="3_pv6hk"]
+[ext_resource type="PackedScene" uid="uid://bqohevi0dyogv" path="res://Scenes/player/player.tscn" id="5_av0st"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl5bv"]
+size = Vector2(166, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av0st"]
+size = Vector2(163, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3aq1"]
+size = Vector2(34, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gxmt"]
+size = Vector2(155, 53)
+
+[node name="scene3_corridor" type="Node2D"]
+
+[node name="corridor_conatiner" type="Node2D" parent="."]
+
+[node name="floor_layer" type="Node2D" parent="corridor_conatiner"]
+
+[node name="floor" type="Sprite2D" parent="corridor_conatiner/floor_layer"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_pnhsf")
+
+[node name="furniture_layer1" type="Node2D" parent="corridor_conatiner"]
+
+[node name="table" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(-725, -94)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_fl5bv")
+
+[node name="plant1" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(-534, -98)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4bo3t")
+
+[node name="plant2" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(1100, -110)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4bo3t")
+
+[node name="door_bedroom" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(-18, -116)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_pv6hk")
+
+[node name="door_toilet" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(796, -118)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_pv6hk")
+
+[node name="door_kitchen" type="Sprite2D" parent="corridor_conatiner/furniture_layer1"]
+position = Vector2(-1308, -116)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_pv6hk")
+
+[node name="active_object" type="CharacterBody2D" parent="corridor_conatiner/furniture_layer1"]
+
+[node name="Door1Area2D" type="Area2D" parent="corridor_conatiner/furniture_layer1/active_object"]
+position = Vector2(-1307, -106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/active_object/Door1Area2D"]
+position = Vector2(-2, 7)
+shape = SubResource("RectangleShape2D_fl5bv")
+
+[node name="Door2Area2D" type="Area2D" parent="corridor_conatiner/furniture_layer1/active_object"]
+position = Vector2(-17, -103)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/active_object/Door2Area2D"]
+position = Vector2(-2, 8)
+shape = SubResource("RectangleShape2D_fl5bv")
+
+[node name="Door3Area2D" type="Area2D" parent="corridor_conatiner/furniture_layer1/active_object"]
+position = Vector2(796, -109)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/active_object/Door3Area2D"]
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_fl5bv")
+
+[node name="Door1CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/active_object"]
+position = Vector2(-1310.5, -138.5)
+shape = SubResource("RectangleShape2D_av0st")
+
+[node name="Door2CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/active_object"]
+position = Vector2(-19, -134)
+shape = SubResource("RectangleShape2D_av0st")
+
+[node name="Door3CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/active_object"]
+position = Vector2(794, -137)
+shape = SubResource("RectangleShape2D_av0st")
+
+[node name="object" type="CharacterBody2D" parent="corridor_conatiner/furniture_layer1"]
+
+[node name="plant1" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/object"]
+position = Vector2(-538, -106.5)
+shape = SubResource("RectangleShape2D_h3aq1")
+
+[node name="plant2" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/object"]
+position = Vector2(1096, -117)
+shape = SubResource("RectangleShape2D_h3aq1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="corridor_conatiner/furniture_layer1/object"]
+position = Vector2(-728.5, -73.5)
+shape = SubResource("RectangleShape2D_1gxmt")
+
+[node name="furniture_layer2" type="Node2D" parent="corridor_conatiner"]
+
+[node name="player" parent="." instance=ExtResource("5_av0st")]
+position = Vector2(-1335, 50)
+scale = Vector2(0.5, 0.5)

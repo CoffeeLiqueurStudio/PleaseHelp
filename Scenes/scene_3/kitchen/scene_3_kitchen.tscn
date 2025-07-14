@@ -1,0 +1,223 @@
+[gd_scene load_steps=20 format=3 uid="uid://c82abyjpgvh4r"]
+
+[ext_resource type="Texture2D" uid="uid://b0jm8r4yracra" path="res://assets/scene_3/objects/kitchen/kitchen_floor.png" id="1_hnr56"]
+[ext_resource type="Texture2D" uid="uid://mimb11us1ybe" path="res://assets/scene_3/objects/kitchen/fridge.png" id="2_ia74i"]
+[ext_resource type="Texture2D" uid="uid://dnxnhijy3foh" path="res://assets/scene_3/objects/kitchen/plant_kitchen.png" id="3_hpqkl"]
+[ext_resource type="Texture2D" uid="uid://b2oqr5syc7qnr" path="res://assets/scene_3/objects/kitchen/chair_kitchen1.png" id="4_evu5b"]
+[ext_resource type="Texture2D" uid="uid://bgyqkv7yvb0dm" path="res://assets/scene_3/objects/kitchen/chair_kitchen2.png" id="5_sy0fg"]
+[ext_resource type="Texture2D" uid="uid://bxu8any7q26d8" path="res://assets/scene_3/objects/kitchen/countertop.png" id="6_sktdv"]
+[ext_resource type="Script" uid="uid://dhy6x8l5cfn58" path="res://Code/scene_3/Objects/kitchen_objects.gd" id="7_ia74i"]
+[ext_resource type="Texture2D" uid="uid://88ggj1bd0io3" path="res://assets/scene_3/objects/kitchen/table_kitchen.png" id="7_qfbr3"]
+[ext_resource type="Texture2D" uid="uid://dikvwc3jbu1ae" path="res://assets/scene_3/objects/kitchen/drawers_kitchen.png" id="8_x646s"]
+[ext_resource type="PackedScene" uid="uid://bqohevi0dyogv" path="res://Scenes/player/player.tscn" id="9_fems2"]
+[ext_resource type="Texture2D" uid="uid://d1a2iahqy5ohe" path="res://assets/201503021702395972_0.jpg" id="10_hpqkl"]
+[ext_resource type="FontFile" uid="uid://dl46mhe2xqn4w" path="res://assets/Fonts/Pangolin-Regular.ttf" id="12_evu5b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jupqi"]
+size = Vector2(330, 290)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnr56"]
+size = Vector2(337, 379.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ia74i"]
+size = Vector2(194, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uml1"]
+size = Vector2(271, 385)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h87uh"]
+size = Vector2(16.5, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onk5s"]
+size = Vector2(60, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dncm0"]
+size = Vector2(64, 49)
+
+[node name="Scene3_kitchen" type="Node2D"]
+
+[node name="KitchenContainer" type="Node2D" parent="."]
+position = Vector2(0, 29)
+
+[node name="Sprite2D" type="Sprite2D" parent="KitchenContainer"]
+self_modulate = Color(0.252028, 0.252028, 0.252028, 1)
+position = Vector2(1075, 496)
+scale = Vector2(2.19353, 1.25597)
+texture = ExtResource("10_hpqkl")
+
+[node name="floor_layer" type="Node2D" parent="KitchenContainer"]
+y_sort_enabled = true
+position = Vector2(-1, -25)
+
+[node name="floor" type="Sprite2D" parent="KitchenContainer/floor_layer"]
+y_sort_enabled = true
+position = Vector2(976, 530)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_hnr56")
+
+[node name="furniture_layer" type="Node2D" parent="KitchenContainer"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-5, -14)
+
+[node name="fridge" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(523, 228)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ia74i")
+
+[node name="plant" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(1526, 940)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_hpqkl")
+offset = Vector2(-136.667, -223.333)
+
+[node name="chair1" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(692, 763)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_evu5b")
+offset = Vector2(-124, -52)
+region_rect = Rect2(0, 0, 260, 242.5)
+
+[node name="chair2" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
+z_index = 3
+position = Vector2(466, 600)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_sy0fg")
+
+[node name="chair3" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
+z_index = 3
+position = Vector2(689, 969)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_evu5b")
+offset = Vector2(-128, -154)
+
+[node name="countertop" type="Sprite2D" parent="KitchenContainer/furniture_layer"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1199, 376)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_sktdv")
+
+[node name="talk_objects" type="CharacterBody2D" parent="KitchenContainer/furniture_layer"]
+collision_layer = 2
+script = ExtResource("7_ia74i")
+
+[node name="fridge" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+position = Vector2(521, 213)
+shape = SubResource("RectangleShape2D_jupqi")
+
+[node name="countertop" type="CollisionPolygon2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+z_index = 2
+position = Vector2(883, 302)
+polygon = PackedVector2Array(-82, -106, 707, -110, 706, 225, 548, 225, 546, 11, -78, 9)
+
+[node name="fridgeArea" type="Area2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+z_index = 2
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/talk_objects/fridgeArea"]
+position = Vector2(527.5, 238.25)
+shape = SubResource("RectangleShape2D_hnr56")
+
+[node name="countertopArea" type="Area2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+z_index = 2
+position = Vector2(1342, 292)
+scale = Vector2(0.8, 1)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/talk_objects/countertopArea"]
+position = Vector2(-6, -15.5)
+shape = SubResource("RectangleShape2D_ia74i")
+
+[node name="countertop2Area" type="Area2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+z_index = 2
+position = Vector2(1195, 369)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/talk_objects/countertop2Area"]
+position = Vector2(-70, -96)
+shape = SubResource("RectangleShape2D_ia74i")
+
+[node name="furniture_layer2" type="Node2D" parent="KitchenContainer/furniture_layer/talk_objects"]
+z_index = 2
+y_sort_enabled = true
+
+[node name="table" type="Sprite2D" parent="KitchenContainer/furniture_layer/talk_objects/furniture_layer2"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(507, 803)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_qfbr3")
+
+[node name="drawers" type="Sprite2D" parent="KitchenContainer/furniture_layer/talk_objects/furniture_layer2"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1199, 245)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_x646s")
+
+[node name="objects" type="CharacterBody2D" parent="KitchenContainer/furniture_layer"]
+collision_layer = 2
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(508.5, 821.5)
+shape = SubResource("RectangleShape2D_4uml1")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(653.75, 913)
+shape = SubResource("RectangleShape2D_h87uh")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(652, 764)
+shape = SubResource("RectangleShape2D_h87uh")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(467, 635)
+shape = SubResource("RectangleShape2D_onk5s")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(1530, 983)
+shape = SubResource("RectangleShape2D_dncm0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KitchenContainer/furniture_layer/objects"]
+position = Vector2(-1, -3)
+polygon = PackedVector2Array(806, 1014, 354, 1013, 355, 42, 1598, 42, 1599, 1016, 950, 1017, 950, 1007, 1593, 1010, 1592, 49, 360, 48, 362, 1007, 806, 1007)
+
+[node name="player" parent="." instance=ExtResource("9_fems2")]
+z_index = 3
+position = Vector2(1009, 571)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" parent="player" index="0"]
+enabled = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0.227451)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1035.0
+offset_top = 69.0
+offset_right = -515.0
+offset_bottom = 132.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("12_evu5b")
+theme_override_font_sizes/font_size = 50
+text = "PRESS \"E\" TO INTERACT"
+
+[connection signal="body_entered" from="KitchenContainer/furniture_layer/talk_objects/fridgeArea" to="KitchenContainer/furniture_layer/talk_objects" method="_on_fridge_area_body_entered"]
+[connection signal="body_exited" from="KitchenContainer/furniture_layer/talk_objects/fridgeArea" to="KitchenContainer/furniture_layer/talk_objects" method="_on_fridge_area_body_exited"]
+[connection signal="body_entered" from="KitchenContainer/furniture_layer/talk_objects/countertopArea" to="KitchenContainer/furniture_layer/talk_objects" method="_on_countertop_area_body_entered"]
+[connection signal="body_exited" from="KitchenContainer/furniture_layer/talk_objects/countertopArea" to="KitchenContainer/furniture_layer/talk_objects" method="_on_countertop_area_body_exited"]
+[connection signal="body_entered" from="KitchenContainer/furniture_layer/talk_objects/countertop2Area" to="KitchenContainer/furniture_layer/talk_objects" method="_on_countertop_area_2_body_entered"]
+[connection signal="body_exited" from="KitchenContainer/furniture_layer/talk_objects/countertop2Area" to="KitchenContainer/furniture_layer/talk_objects" method="_on_countertop_2_area_body_exited"]
+
+[editable path="player"]

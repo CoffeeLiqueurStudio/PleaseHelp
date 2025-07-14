@@ -28,7 +28,10 @@ directories/dch_directory={
 directories/dtl_directory={
 "bed_timeline": "res://Dialogs/scene_3/bedroom/bed_timeline.dtl",
 "closet_timeline": "res://Dialogs/scene_3/bedroom/closet_timeline.dtl",
+"countertop1_timeline": "res://Dialogs/scene_3/kitchen/countertop1_timeline.dtl",
+"countertop2_timeline": "res://Dialogs/scene_3/kitchen/countertop2_timeline.dtl",
 "first_gif_timeline": "res://Dialogs/scene_1/first_gif_timeline.dtl",
+"fridge_timeline": "res://Dialogs/scene_3/kitchen/fridge_timeline.dtl",
 "nightstable_timeline": "res://Dialogs/scene_3/bedroom/nightstable_timeline.dtl",
 "scene2_timeline": "res://Dialogs/scene_2/scene2_timeline.dtl",
 "table_timeline": "res://Dialogs/scene_3/bedroom/table_timeline.dtl"
