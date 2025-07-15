@@ -25,6 +25,15 @@
 "scale": 0.7,
 "scene": ""
 },
+"nothing": {
+"export_overrides": {
+"image": "\"res://assets/dialogue/nothing.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+},
 "sad": {
 "export_overrides": {
 "image": "\"res://Dialogs/characters/scripta/scripta_sad.png\""
