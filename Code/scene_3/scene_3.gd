@@ -1,9 +1,11 @@
 extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var chosed_area: String = ""
-@onready var label: Label = $CanvasLayer/Label2
+@onready var label: Label = $player/Label2
+
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	label.hide()
 func _on_bedroom_exit_area_2d_body_entered(body: Node2D) -> void:
 	chosed_area = "exit_bedroom"
@@ -20,6 +22,8 @@ func _on_kitchen_exit_area_body_entered(body: Node2D) -> void:
 	chosed_area = "exit_kitchen"
 	label.show()
 func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_end"):
+		animation_player.play("end")
 	if Input.is_action_just_pressed("interact"):
 		match chosed_area:
 			"exit_bedroom":

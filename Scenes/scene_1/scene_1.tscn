@@ -444,3 +444,6 @@ sprite_frames = SubResource("SpriteFrames_auwci")
 animation = &"1"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)

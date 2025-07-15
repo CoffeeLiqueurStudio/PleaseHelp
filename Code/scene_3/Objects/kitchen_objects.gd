@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 var schosed_area: String = ""
-@onready var label_2: Label = $"../../../CanvasLayer/Label2"
+@onready var label_2: Label = $"../../../player/Label2"
+
 
 func _on_fridge_area_body_entered(body: Node2D) -> void:
 	schosed_area = 'fridge'

@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwtlq45o6myja"]
+
+[ext_resource type="Script" uid="uid://pa88cue5lp0h" path="res://Code/debug/option_settings.gd" id="1_mj6nv"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionSettings" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+script = ExtResource("1_mj6nv")
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/OptionSettings"]
+layout_mode = 2
+
+[node name="FullScreen_CheckBox" type="CheckBox" parent="HBoxContainer/OptionSettings"]
+layout_mode = 2
+text = "FullScreen"
+
+[connection signal="item_selected" from="HBoxContainer/OptionSettings/OptionButton" to="HBoxContainer/OptionSettings" method="_on_option_button_item_selected"]
+[connection signal="toggled" from="HBoxContainer/OptionSettings/FullScreen_CheckBox" to="HBoxContainer/OptionSettings" method="_on_full_screen_check_box_toggled"]

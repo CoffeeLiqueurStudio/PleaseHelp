@@ -3,6 +3,7 @@ extends Node2D
 @onready var player: CharacterBody2D = $player
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	animation_player.play("enter")
 	await animation_player.animation_finished
@@ -10,13 +11,13 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if Dialogic.current_timeline != null:
 		return
-	Dialogic.start('scene2_timeline')
+	Dialogic.start('scene2_2timeline')
 	get_viewport().set_input_as_handled()
 func _on_dialogic_signal(argument:String):
 	if argument == "shoot_scripta":
 		get_tree().create_timer(3).timeout
 		animation_player.play("shoot")
-
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

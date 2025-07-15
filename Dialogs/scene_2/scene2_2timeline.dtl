@@ -1,0 +1,29 @@
+[style]
+[shake]ЭТОТ МИР РЕАЛЕН! Я в него верю! Ты в него веришь![/shake]
+join scripta left
+scripta: Новая локация?
+leave --All--
+shani: [shake]Это то, чего я боялся, что было неизбежно, но я рад, что это случилось, ведь прямо сейчас я счастлив, и я уверен в этом, я понимаю.[/shake]
+shani: [shake]Очередное место,  где у меня рвота мыслей[/shake]
+join scripta left
+scripta (normal): То есть суть локации в хорошей концовке?
+leave scripta
+shani: Я не уверен, что значит это место для других, но для меня это значит хорошую концовку
+shani: Можешь осмотреться, если хочешь
+join scripta left
+scripta (normal): Я была в твоей голове очень долго, ты сможешь попрощаться со мной? Это же концовка
+leave scripta
+shani: Я не уверен
+join scripta left
+scripta (normal): Ты сделал то, что хотел все эти года, теперь тебе следует успокоиться
+leave scripta
+shani: Я продолжу путь, но посмотрю на всё ещё раз
+join scripta (normal) left
+scripta (normal): Как хочешь, только убей меня быстро
+leave scripta
+shani: Прошу прощения за это
+join scripta (sad) left
+scripta (sad): Ничего страшного для меня, я почти не чувствую это, если всё происходит быстро, но для тебя я не думаю, что это хорошая идея
+leave scripta
+shani: Возможно
+[signal arg="shoot_scripta"]

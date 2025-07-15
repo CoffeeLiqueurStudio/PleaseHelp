@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var button_pressed: bool = false
 var schosed_area: String = ""
-@onready var label_2: Label = $"../../../CanvasLayer/Label2"
+@onready var label_2: Label = $"../../../player/Label2"
 @onready var player: CharacterBody2D = $"../../../player"
 
 

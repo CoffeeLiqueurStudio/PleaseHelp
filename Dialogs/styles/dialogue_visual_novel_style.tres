@@ -56,4 +56,4 @@ script = ExtResource("10_0d84y")
 name = "dialogue_visual_novel_style"
 base_overrides = {}
 layers = Array[ExtResource("1_rqq51")]([SubResource("Resource_h3mc6"), SubResource("Resource_ilc6h"), SubResource("Resource_m1gdw"), SubResource("Resource_sc1nn"), SubResource("Resource_h3r4i"), SubResource("Resource_kockf"), SubResource("Resource_y5dtv"), SubResource("Resource_yulkq")])
-metadata/_latest_layer = 1
+metadata/_latest_layer = 3

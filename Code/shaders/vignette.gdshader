@@ -25,4 +25,3 @@ void fragment() {
 
     COLOR = vec4(vec3(0.0), darkness_amount);
 }
-

@@ -1,13 +1,18 @@
-[gd_scene load_steps=17 format=3 uid="uid://bnp5g7f2q7k2x"]
+[gd_scene load_steps=22 format=3 uid="uid://bnp5g7f2q7k2x"]
 
 [ext_resource type="Script" uid="uid://4yvd7cjbs5ss" path="res://Scenes/Scene_2/scene_2.gd" id="1_ikpt6"]
-[ext_resource type="VideoStream" uid="uid://v4b2nx1a4msw" path="res://assets/scene_2/scene_2_video.ogv" id="2_uaerd"]
+[ext_resource type="VideoStream" uid="uid://b6j32jh2jcm2x" path="res://assets/scene_2/godotvideo223.ogv" id="2_cgxhc"]
 [ext_resource type="PackedScene" uid="uid://bqohevi0dyogv" path="res://Scenes/player/player.tscn" id="2_v2hds"]
 [ext_resource type="FontFile" uid="uid://dl46mhe2xqn4w" path="res://assets/Fonts/Pangolin-Regular.ttf" id="3_5hree"]
+[ext_resource type="Texture2D" uid="uid://xydv1lq2tpbh" path="res://assets/scene_2/abstr_way.png" id="3_leev3"]
 [ext_resource type="Texture2D" uid="uid://cfk5plmvdcry5" path="res://assets/scene_2/abstr_room.png" id="3_uj53q"]
 [ext_resource type="Shader" uid="uid://pccevqvcitep" path="res://Code/shaders/glitch.gdshader" id="5_uj53q"]
+[ext_resource type="Texture2D" uid="uid://cpkr7y3t2pppk" path="res://assets/GUI/button_tryagain1.png" id="7_0q87u"]
 [ext_resource type="AudioStream" uid="uid://dfnui2un2mwen" path="res://assets/sounds/sound_shoot_pistol.mp3" id="7_uaerd"]
+[ext_resource type="Texture2D" uid="uid://u3mrvmd43vrs" path="res://assets/GUI/button_exittomainmenu1.png" id="7_xwrot"]
 [ext_resource type="Texture2D" uid="uid://bk6vvlqvmtx2u" path="res://assets/global_arts/Keyboard Letters and Symbols.png" id="8_cgxhc"]
+[ext_resource type="Texture2D" uid="uid://ce0yt77ubva2y" path="res://assets/GUI/button_tryagain2.png" id="8_rav5o"]
+[ext_resource type="Texture2D" uid="uid://cge582x0hg42" path="res://assets/GUI/button_exittomainmenu2.png" id="8_uje0r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uj53q"]
 shader = ExtResource("5_uj53q")
@@ -48,7 +53,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("CanvasLayer:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -283,28 +288,35 @@ metadata/_edit_vertical_guides_ = [-8643.0]
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-stream = ExtResource("2_uaerd")
+stream = ExtResource("2_cgxhc")
 autoplay = true
 loop = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(954, 1008)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_leev3")
 
 [node name="room" type="Sprite2D" parent="."]
-position = Vector2(1002, 381)
+position = Vector2(960, 381)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_uj53q")
 
 [node name="keyboard_label" type="Label" parent="."]
 modulate = Color(0.588235, 0.588235, 0.588235, 0.192157)
-offset_left = 680.0
-offset_top = 241.0
-offset_right = 751.0
-offset_bottom = 296.0
+offset_left = 580.0
+offset_top = 62.0
+offset_right = 651.0
+offset_bottom = 117.0
 theme_override_fonts/font = ExtResource("3_5hree")
 theme_override_font_sizes/font_size = 20
 text = "W,A,S,D
 to move"
+metadata/_edit_use_anchors_ = true
 
 [node name="player" parent="." instance=ExtResource("2_v2hds")]
-position = Vector2(1004, 306)
+position = Vector2(960, 306)
 scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" parent="player" index="0"]
@@ -316,46 +328,61 @@ material = SubResource("ShaderMaterial_uj53q")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -257.0
+offset_left = -339.5
 offset_top = -173.5
-offset_right = 257.0
+offset_right = 339.5
 offset_bottom = 173.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.3, 1.3)
+pivot_offset = Vector2(337.5, 188.5)
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5hree")
-theme_override_font_sizes/font_size = 50
-text = "ВЫ МЕРТВЫ"
+theme_override_font_sizes/font_size = 35
+text = "Скрипта умерла от желаний сценариста"
 
-[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+[node name="restart" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_xwrot")
+texture_pressed = ExtResource("8_uje0r")
+texture_hover = ExtResource("8_uje0r")
+texture_disabled = ExtResource("8_uje0r")
+texture_focused = ExtResource("8_uje0r")
 
-[node name="restart" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="quit" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer"]
+texture_filter = 4
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3_5hree")
-theme_override_font_sizes/font_size = 50
-text = "НАЧАТЬ ЗАНОВО"
-
-[node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3_5hree")
-theme_override_font_sizes/font_size = 50
-text = "ВЫЙТИ ИЗ ИГРЫ"
+size_flags_horizontal = 4
+texture_normal = ExtResource("7_0q87u")
+texture_pressed = ExtResource("8_rav5o")
+texture_hover = ExtResource("8_rav5o")
+texture_disabled = ExtResource("8_rav5o")
+texture_focused = ExtResource("8_rav5o")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-31, 2)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -364,14 +391,14 @@ scale = Vector2(2.68925, -0.527675)
 shape = SubResource("CircleShape2D_ikpt6")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-11, -140)
+position = Vector2(-52, -140)
 collision_layer = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(539, 868, 944, 870, 944, 1080, 534, 875, 534, 166, 1492, 166, 1494, 873, 1073, 1082, 1072, 870, 1487, 870, 1488, 272, 539, 268)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-18, 872)
+position = Vector2(-60, 872)
 collision_layer = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
@@ -432,8 +459,8 @@ hframes = 8
 vframes = 14
 frame = 34
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 
 [editable path="player"]

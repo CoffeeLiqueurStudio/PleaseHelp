@@ -4,6 +4,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	animation_player.play("0")
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	if Dialogic.current_timeline != null:
