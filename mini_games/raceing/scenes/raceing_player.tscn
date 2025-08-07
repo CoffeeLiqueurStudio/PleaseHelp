@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvkwc2274nhxn"]
+
+[ext_resource type="Script" uid="uid://dvi3xndf3kkcm" path="res://mini_games/raceing/scripts/raceing_player.gd" id="1_t17qm"]
+[ext_resource type="Texture2D" uid="uid://b6secb4onvhhc" path="res://icon.svg" id="2_wsxsl"]
+
+[node name="Raceing_Player" type="CharacterBody2D"]
+script = ExtResource("1_t17qm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wsxsl")
